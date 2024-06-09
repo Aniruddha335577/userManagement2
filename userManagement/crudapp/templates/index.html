@@ -39,6 +39,43 @@
         <br><br>
         <a href="{% url 'add' %}"><button id="new3">Add Member</button></a>
     </div>
+
+
+    <div class="container">
+        <h1>Members</h1>
+        <table id="customers" border="1">
+            <thead>
+                <th>Id</th>
+                <th>Profession</th>
+                <th>Membership</th>
+                
+                <th colspan="2" id="mid">Action</th>
+            </thead>
+            {% for x in mem %}
+            <tr>
+                <td>{{x.id}}</td>
+                <td>{{x.profession}}</td>
+                <td>{{x.membership}}</td>
+                
+                <td>
+                    <a href="update/{{x.id}}"><button id="up">update</button></a>
+                </td>
+                <td>
+                    <a href="delete/{{x.id}}"><button id="del">delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        <a href="{% url 'add' %}"><button id="new3">Add Member</button></a>
+    </div>
+   
+
+    
+
+
+    
+
 </body>
 
 </html>

@@ -5,6 +5,6 @@ from django.contrib import admin
 from .models import Member
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display="firstname","lastname","country"
+    list_display="firstname","lastname","country","profession","membership"
 
 admin.site.register(Member,MemberAdmin)

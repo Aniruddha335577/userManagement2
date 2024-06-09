@@ -12,7 +12,10 @@ def addrec(request):
     x=request.POST['first']
     y=request.POST['last']
     z=request.POST['country']
-    mem=Member(firstname=x,lastname=y,country=z)
+    a=request.POST['profession']
+    b=request.POST['membership']
+    
+    mem=Member(firstname=x,lastname=y,country=z,profession=a,membership=b)
     mem.save()
     return redirect("/")
 
@@ -29,9 +32,13 @@ def uprec(request,id):
     x=request.POST['first']
     y=request.POST['last']
     z=request.POST['country']
+    a=request.POST['profession']
+    b=request.POST['membership']
     mem=Member.objects.get(id=id)
     mem.firstname=x
     mem.lastname=y
     mem.country=z
+    mem.profession=a
+    mem.membership=b
     mem.save()
     return redirect("/")
